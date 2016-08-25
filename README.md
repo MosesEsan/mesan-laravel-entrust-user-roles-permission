@@ -1,4 +1,4 @@
-# Laravel Role Based Authentication ()
+# Laravel Role Based Authentication
 A User and Roles Management PHP project using the Laravel framework and Entrust to create a role based authentication API.
 
 Users with full permission can
