@@ -18,7 +18,7 @@ class CreateClientsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('added_by')->unsigned();
-            $table->integer('updated_by')->unsigned();
+            $table->integer('updated_by')->unsigned()->nullable();
             $table->string('website')->nullable();
             $table->integer('status')->unsigned();
             $table->timestamps();
@@ -38,20 +38,3 @@ class CreateClientsTable extends Migration
         Schema::drop("clients");
     }
 }
-
-
-//
-//    Address1 VARCHAR2(255),
-//    Address2 VARCHAR2(255),
-//    ADDRESS3 VARCHAR2(255),
-//    Town VARCHAR2(255),
-//    County VARCHAR2(255),
-//    Postcode VARCHAR2(255),
-//    Country VARCHAR2(255),
-//Consultantid Varchar2(255) Not Null,
-
-//
-//
-//    PhoneNo VARCHAR2(60),
-//    FaxNo VARCHAR2(60),
-//    Industry Varchar2(255),

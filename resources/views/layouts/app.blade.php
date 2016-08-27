@@ -37,7 +37,7 @@
             </div>
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('users.create') }}">New User</a></li>
@@ -50,6 +50,13 @@
                             <li><a href="{{ route('roles.create') }}">New Role</a></li>
                             <li class="divider"></li>
                             <li><a  href="{{ url('/roles') }}">Manage Roles</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Clients<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ route('clients.create') }}">New Client</a></li>
+                            <li class="divider"></li>
+                            <li><a  href="{{ url('/clients') }}">Manage Clients</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -66,13 +73,13 @@
                     <li class="nav-header"><i class="icon-wrench"></i> Administration</li>
                     <li><a href="{{ url('/users') }}">Users</a></li>
                     <li><a href="{{ url('/roles') }}">Roles</a></li>
-                    <li class="nav-header"><i class="icon-wrench"></i> Main</li>
                     <li><a href="{{ url('/clients') }}">Clients</a></li>
-                    <li><a href="{{ url('/candidates') }}">Candidates</a></li>
+                    {{--<li><a href="{{ url('/candidates') }}">Candidates</a></li>--}}
                     <li class="nav-header"><i class="icon-user"></i> Profile</li>
                     <li><a href="my-profile.html">My profile</a></li>
                     <li><a href="#">Settings</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="{{ url('/logout') }}">Logout</a></li>
+
                 </ul>
             </div>
         </div>

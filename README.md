@@ -7,7 +7,7 @@ Users with full permission can
 <li>Set Permissions for each role</li>
 <li>Create New Users</li>
 <li>Set each users role</li>
-<ul>
+</ul>
 
 <h2>Roles</h2>
 <ol>
@@ -24,7 +24,10 @@ Users with full permission can
 <li>Edit User Info - <b>users/{{user_id}}</b> - PUT/PATCH -  <b>U</b></li>
 <li>Delete User - <b>users/{{user_id}}</b> - DELETE -  <b>D</b></li>
 </ol>
+<br>
 
+
+<h1>Steps</h1>
 
 In order to create this project, I followed this <a href="http://itsolutionstuff.com/post/laravel-52-user-acl-roles-and-permissions-with-middleware-using-entrust-from-scratch-tutorialexample.html">tutorial</> to set up the base of the project.
 
@@ -36,7 +39,7 @@ In order to create this project, I followed this <a href="http://itsolutionstuff
 </ul>
 
 <a name="step1"></a>
-<h1>Step 1: SETUP AND DEPENDENCIES </h1>
+<h1>Step 1: Setup and Dependencies</h1>
 
 Open composer.json and update the require object to include entrust:
 ```php
@@ -89,14 +92,14 @@ protected $routeMiddleware = [
 <a name="step2"></a>
 <h1>Step 2: Create Tables Using Migration</h1>
 
-<ul>
-    <ol>users</ol>
-    <ol>roles</ol>
-    <ol>role_user</ol>
-    <ol>permission_role</ol
-    <ol><b>clients<b></ol>
-    <ol><b>client_statuses<b></ol>
-</ul>
+<ol>
+    <li>users</ol>
+    <li>roles</ol>
+    <li>role_user</ol>
+    <li>permission_role</ol
+    <li><b>clients<b></ol>
+    <li><b>client_statuses<b></ol>
+</ol>
 
 If you install a fresh laravel project then you have already users table migration.
 You need to create the clients, client_statuses table.
@@ -193,7 +196,7 @@ In vendor/zizaco/entrust/src/commands/MigrationCommand.php on line 86
 remove line :
 ```php
    $usersTable  = Config::get('auth.table');
-    $userModel   = Config::get('auth.model');
+   $userModel   = Config::get('auth.model');
 ```
 
 add line :

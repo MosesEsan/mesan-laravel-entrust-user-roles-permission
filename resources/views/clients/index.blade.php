@@ -40,14 +40,18 @@
                         <td>{{ $client->added_by }}</td>
 
                         <td>
-                            <a class="btn btn-info" href="{{ route('clients.show',$client->id) }}">Show</a>
                             @permission(('item-edit'))
                             <a class="btn btn-primary" href="{{ route('clients.edit',$client->id) }}">Edit</a>
                             @endpermission
                             @permission(('item-delete'))
-                            {!! Form::open(['method' => 'DELETE','route' => ['clients.destroy', $client->id],'style'=>'display:inline']) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
+                            <form action="{{ url('clients/'.$client->id) }}" method="POST" style="display: inline-block">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+
+                                <button type="submit" id="delete-task-{{ $client->id }}" class="btn btn-danger">
+                                    <i class="fa fa-btn fa-trash"></i>Delete
+                                </button>
+                            </form>
                             @endpermission
                         </td>
                     </tr>

@@ -52,8 +52,8 @@
                     <div class="control-group">
                         <label class="control-label" for="role">Role</label>
                         <div class="controls">
-                            @foreach ($permission as $value)
-                                <input type="checkbox"  value="{{$value->id}}" name="permission[]"> {{$value->display_name}}<br>
+                            @foreach ($permission as $key => $value)
+                                <input type="checkbox"  value="{{$key}}" name="permission[]"> {{$value}}<br>
                             @endforeach
                         </div>
                     </div>

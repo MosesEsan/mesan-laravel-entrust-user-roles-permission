@@ -45,7 +45,7 @@
                     <div class="control-group">
                         <label class="control-label" for="website">Website</label>
                         <div class="controls">
-                            <input type="text" class="input-xlarge" id="website" name="name"/>
+                            <input type="text" class="input-xlarge" id="website" name="website"/>
                         </div>
                     </div>
                     <div class="control-group">
@@ -53,7 +53,7 @@
                         <div class="controls">
                             <select id="addedby" name="added_by">
                                 @foreach ($consultants as $key => $consultant)
-                                    <option value="{{$consultant->id}}">{{$consultant->name}}</option>
+                                    <option value="{{$key}}">{{$consultant}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -63,7 +63,7 @@
                         <div class="controls">
                             <select id="status" name="status">
                                 @foreach ($status as $key => $value)
-                                    <option value="{{$value->id}}">{{$value->name}}</option>
+                                    <option value="{{$key}}">{{$value}}</option>
                                 @endforeach
                             </select>
                         </div>

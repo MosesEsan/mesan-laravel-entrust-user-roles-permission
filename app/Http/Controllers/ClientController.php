@@ -21,8 +21,9 @@ class ClientController extends Controller
      */
     public function index(Request $request)
     {
-        $clients = Client::orderBy('id','DESC');
+        $clients = Client::orderBy('id','DESC')->get();
 
+//        print_r($clients) ;
         return view('clients.index',compact('clients'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -36,9 +37,9 @@ class ClientController extends Controller
     {
         $consultants = User::whereHas('roles', function($q){
             $q->where('name', 'consultant');
-        })->get();
+        })->pluck('name','id');
 
-        $status= ClientStatus::get();
+        $status= ClientStatus::pluck('name','id');
 
         return view('clients.create',compact('consultants', 'status'));
     }
@@ -72,8 +73,8 @@ class ClientController extends Controller
      */
     public function show($id)
     {
-        $item = Item::find($id);
-        return view('clients.show',compact('item'));
+        $client = Client::find($id);
+        return view('clients.show',compact('client'));
     }
 
     /**
@@ -84,8 +85,16 @@ class ClientController extends Controller
      */
     public function edit($id)
     {
-        $item = Item::find($id);
-        return view('clients.edit',compact('item'));
+        $client = Client::find($id);
+
+        $consultants = User::whereHas('roles', function($q){
+            $q->where('name', 'consultant');
+        })->pluck('name','id');
+
+        $status= ClientStatus::pluck('name','id');
+
+
+        return view('clients.edit',compact('client','consultants', 'status'));
     }
 
     /**
@@ -98,14 +107,17 @@ class ClientController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required',
+            'name' => 'required',
             'description' => 'required',
+            'added_by' => 'required',
+            'status' => 'required',
         ]);
 
-        Item::find($id)->update($request->all());
+        Client::find($id)->update($request->all());
 
         return redirect()->route('clients.index')
-            ->with('success','Item updated successfully');
+            ->with('success','Client updated successfully');
+
     }
 
     /**
@@ -116,8 +128,8 @@ class ClientController extends Controller
      */
     public function destroy($id)
     {
-        Item::find($id)->delete();
+        Client::find($id)->delete();
         return redirect()->route('clients.index')
-            ->with('success','Item deleted successfully');
+            ->with('success','Client deleted successfully');
     }
 }
