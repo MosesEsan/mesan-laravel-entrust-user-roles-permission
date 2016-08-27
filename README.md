@@ -93,12 +93,12 @@ protected $routeMiddleware = [
 <h1>Step 2: Create Tables Using Migration</h1>
 
 <ol>
-    <li>users</ol>
-    <li>roles</ol>
-    <li>role_user</ol>
-    <li>permission_role</ol
-    <li><b>clients<b></ol>
-    <li><b>client_statuses<b></ol>
+    <li>users</li>
+    <li>roles</li>
+    <li>role_user</li>
+    <li>permission_role</li>
+    <li><b>clients<b></li>
+    <li><b>client_statuses<b></li>
 </ol>
 
 If you install a fresh laravel project then you have already users table migration.
