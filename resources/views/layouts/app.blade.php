@@ -17,27 +17,28 @@
 <body>
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
-        <div class="container-fluid">
+        <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">User Management</a>
+            <a class="brand" href="#">Moses Esan User Management</a>
             <div class="btn-group pull-right">
-                <a class="btn" href="my-profile.html"><i class="icon-user"></i> Admin</a>
+                <a class="btn" href="my-profile.html"><i class="icon-user"></i> {{ Auth::user()->name }}</a>
                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                     <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="my-profile.html">Profile</a></li>
+                    <li><a href="{{ url('/profile') }}">Profile</a></li>
                     <li class="divider"></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="{{ url('/logout') }}">Logout</a></li>
                 </ul>
             </div>
             <div class="nav-collapse">
                 <ul class="nav">
                     <li><a href="{{ url('/') }}">Home</a></li>
+                    @role(('admin'))
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('users.create') }}">New User</a></li>
@@ -45,6 +46,8 @@
                             <li><a href="{{ url('/users') }}">Manage Users</a></li>
                         </ul>
                     </li>
+                    @endrole
+                    @permission(('role-list'))
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Roles <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('roles.create') }}">New Role</a></li>
@@ -52,6 +55,7 @@
                             <li><a  href="{{ url('/roles') }}">Manage Roles</a></li>
                         </ul>
                     </li>
+                    @endpermission
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Clients<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="{{ route('clients.create') }}">New Client</a></li>
@@ -71,13 +75,16 @@
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                     <li class="nav-header"><i class="icon-wrench"></i> Administration</li>
+                    @role(('admin'))
                     <li><a href="{{ url('/users') }}">Users</a></li>
+                    @endrole
+                    @permission(('role-list'))
                     <li><a href="{{ url('/roles') }}">Roles</a></li>
+                    @endpermission
                     <li><a href="{{ url('/clients') }}">Clients</a></li>
                     {{--<li><a href="{{ url('/candidates') }}">Candidates</a></li>--}}
                     <li class="nav-header"><i class="icon-user"></i> Profile</li>
-                    <li><a href="my-profile.html">My profile</a></li>
-                    <li><a href="#">Settings</a></li>
+                    <li><a href="{{ url('/profile') }}">My profile</a></li>
                     <li><a href="{{ url('/logout') }}">Logout</a></li>
 
                 </ul>

@@ -33,19 +33,19 @@
                     <div class="control-group">
                         <label class="control-label" for="name">Client Name</label>
                         <div class="controls">
-                            <input type="text" class="input-xlarge" id="name" name="name"/>
+                            <input type="text" class="input-xlarge" id="name" name="name"  value="{{ old('name') }}"/>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="description">Client Info</label>
                         <div class="controls">
-                            <textarea class="input-xlarge" id="description" rows="3" name="description" ></textarea>
+                            <textarea class="input-xlarge" id="description" rows="3" name="description" >{{ old('description') }}</textarea>
                         </div>
                     </div>
                     <div class="control-group">
                         <label class="control-label" for="website">Website</label>
                         <div class="controls">
-                            <input type="text" class="input-xlarge" id="website" name="website"/>
+                            <input type="text" class="input-xlarge" id="website" name="website"  value="{{ old('website') }}"/>
                         </div>
                     </div>
                     <div class="control-group">

@@ -41,9 +41,16 @@
 
 
                     <td>
-                        {{--<a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>--}}
-                        <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
 
+                        @permission(('role-list'))
+                        <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
+                        @endpermission
+
+                        @permission(('role-edit'))
+                        <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
+                        @endpermission
+
+                        @permission(('role-delete'))
                         <form action="{{ url('roles/'.$role->id) }}" method="POST" style="display: inline-block">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
@@ -52,6 +59,7 @@
                                 <i class="fa fa-btn fa-trash"></i>Delete
                             </button>
                         </form>
+                        @endpermission
                     </td>
                 </tr>
                 @endforeach

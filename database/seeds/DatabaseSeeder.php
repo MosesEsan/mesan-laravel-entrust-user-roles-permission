@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         }
 
         //3) Create Admin User
-        $user = ['name' => 'Admin User', 'email' => 'admin@dbox.com', 'password' => Hash::make('dbxdadmin')];
+        $user = ['name' => 'Admin User', 'email' => 'admin@test.com', 'password' => Hash::make('testadmin')];
         $user = User::create($user);
 
         //4) Set User Role

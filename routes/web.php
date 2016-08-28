@@ -12,8 +12,13 @@
 */
 
 
-//Auth::routes();
-Route::auth();
+Auth::routes();
+
+Route::get('logout', function() {
+    Auth::logout();
+    Session::flush();
+    return redirect('/');
+});
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
@@ -22,6 +27,15 @@ Route::get('/home', 'HomeController@index');
 Route::group(['middleware' => ['auth']], function() {
 
     Route::resource('users','UserController');
+    Route::get('users',[
+        'as'=>'users.index',
+        'uses'=>'UserController@index',
+        'middleware' => ['role:admin']
+    ]);
+
+    Route::get('profile',['as'=>'users.profile','uses'=>'UserController@profile']);  //Update
+    Route::patch('profile','UserController@updateProfile');
+
 
     //----------------------------------------------
 

@@ -34,24 +34,24 @@ class PermissionSeeder extends Seeder
                 'description' => 'Delete Role'
             ],
             [
-                'name' => 'item-list',
-                'display_name' => 'Display Item Listing',
-                'description' => 'See only Listing Of Item'
+                'name' => 'client-list',
+                'display_name' => 'Display Clients',
+                'description' => 'See only Listing Of Clients'
             ],
             [
-                'name' => 'item-create',
-                'display_name' => 'Create Item',
-                'description' => 'Create New Item'
+                'name' => 'client-create',
+                'display_name' => 'Create Client',
+                'description' => 'Create New Client'
             ],
             [
-                'name' => 'item-edit',
-                'display_name' => 'Edit Item',
-                'description' => 'Edit Item'
+                'name' => 'client-edit',
+                'display_name' => 'Edit Client',
+                'description' => 'Edit Client'
             ],
             [
-                'name' => 'item-delete',
-                'display_name' => 'Delete Item',
-                'description' => 'Delete Item'
+                'name' => 'client-delete',
+                'display_name' => 'Delete Client',
+                'description' => 'Delete Client'
             ]
         ];
 

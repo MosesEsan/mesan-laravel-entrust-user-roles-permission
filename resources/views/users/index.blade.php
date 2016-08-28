@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+	@if ($message = Session::get('success'))
+		<div class="alert alert-success">
+			<p>{{ $message }}</p>
+		</div>
+	@endif
 	<div class="span9">
 		<div class="row-fluid">
 			<div class="page-header">
@@ -33,7 +38,7 @@
 						</td>
 
 						<td>
-							{{--<a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>--}}
+							<a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
 							<a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
 
 							<form action="{{ url('users/'.$user->id) }}" method="POST" style="display: inline-block">

@@ -21,7 +21,17 @@ class ClientController extends Controller
      */
     public function index(Request $request)
     {
-        $clients = Client::orderBy('id','DESC')->get();
+        $clients =
+            Client::leftJoin('client_statuses', function($join)
+            {
+                $join->on('clients.status', '=', 'client_statuses.id');
+            })->leftJoin('users', function($join)
+            {
+                $join->on('clients.added_by', '=', 'users.id');
+            })->select('clients.id', 'clients.name', 'clients.description',
+                    'clients.website', 'client_statuses.name as status', 'users.name as added_by')
+                ->get();
+
 
 //        print_r($clients) ;
         return view('clients.index',compact('clients'))

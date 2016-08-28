@@ -1,19 +1,10 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: mosesesan
- * Date: 8/24/16
- * Time: 12:56 PM
- */
-?>
 @extends('layouts.app')
 
 @section('content')
-
     <div class="span9">
         <div class="row-fluid">
             <div class="page-header">
-                <h1>New Role <small>Add a new role</small></h1>
+                <h1>My Profile <small>Update info</small></h1>
             </div>
 
             @if (count($errors) > 0)
@@ -27,39 +18,42 @@
                 </div>
             @endif
 
-            <form action="{{ url('roles') }}" method="POST" class="form-horizontal">
+
+
+            <form action="{{ url('profile')}}" method="POST" class="form-horizontal">
                 {{ csrf_field() }}
+                {{ method_field('PATCH') }}
+
                 <fieldset>
                     <div class="control-group">
-                        <label class="control-label" for="role">Role Name</label>
+                        <label class="control-label" for="name">Name</label>
                         <div class="controls">
-                            <input type="text" class="input-xlarge" id="role" name="name" value="{{ old('email') }}"/>
+                            <input type="text" class="input-xlarge" id="name" name="name" value="{{$user->name}}"/>
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="role">Display Name</label>
+                        <label class="control-label" for="email">E-mail</label>
                         <div class="controls">
-                            <input type="text" class="input-xlarge" id="role" name="display_name" value="{{ old('display_name') }}"/>
+                            <input type="text" class="input-xlarge" id="email" name="email" value="{{$user->email}}"/>
                         </div>
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="description">Description</label>
+                        <label class="control-label" for="email">Password</label>
                         <div class="controls">
-                            <textarea class="input-xlarge" id="description" rows="3" name="description" >{{ old('description') }}</textarea>
+                            <input id="password" type="password" class="form-control" name="password">
                         </div>
                     </div>
 
                     <div class="control-group">
-                        <label class="control-label" for="role">Role</label>
+                        <label class="control-label" for="email">Confirm Password</label>
                         <div class="controls">
-                            @foreach ($permission as $key => $value)
-                                <input type="checkbox"  value="{{$key}}" name="permission[]"> {{$value}}<br>
-                            @endforeach
+                            <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
                         </div>
                     </div>
+
                     <div class="form-actions">
-                        <input type="submit" class="btn btn-success btn-large" value="Save Role" />
-                        <a class="btn"  href="{{ url('/roles') }}">Cancel</a>
+                        <input type="submit" class="btn btn-success btn-large" value="Save Changes" />
+                        <a class="btn"  href="{{ url('/users') }}">Cancel</a>
                     </div>
                 </fieldset>
             </form>

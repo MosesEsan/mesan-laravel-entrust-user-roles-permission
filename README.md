@@ -1,15 +1,16 @@
-# Laravel Role Based Authentication
-A User and Roles Management PHP project using the Laravel framework and Entrust to create a role based authentication API.
+# Laravel 5.3 Role Based Authentication using Entrust Package
+A User and Roles Management PHP project using the Laravel framework and Entrust package to create a role based authentication API.
 
-Users with full permission can
-<ul>
+<h2>Admin Users can:</h2>
+<ol>
 <li>Create New Roles</li>
 <li>Set Permissions for each role</li>
 <li>Create New Users</li>
 <li>Set each users role</li>
-</ul>
+</ol>
 
-<h2>Roles</h2>
+<h2>API Structure</h2>
+<strong>Roles</strong>
 <ol>
 <li>Create New Roles - <b>/roles</b> - POST - <b>C</b></li>
 <li>View Role Info - <b>roles/{{role_id}}</b> - GET - <b>R</b></li>
@@ -17,7 +18,7 @@ Users with full permission can
 <li>Delete Role - <b>roles/{{role_id}}</b> - DELETE -  <b>D</b></li>
 </ol>
 
-<h2>Users</h2>
+<strong>Users</strong>
 <ol>
 <li>Create New Users - <b>/users</b> - POST - <b>C</b></li>
 <li>View User Info - <b>users/{{user_id}}</b> - GET - <b>R</b></li>
@@ -29,14 +30,13 @@ Users with full permission can
 
 <h1>Steps</h1>
 
-In order to create this project, I followed this <a href="http://itsolutionstuff.com/post/laravel-52-user-acl-roles-and-permissions-with-middleware-using-entrust-from-scratch-tutorialexample.html">tutorial</> to set up the base of the project.
+In order to create this project, I followed this <a href="http://itsolutionstuff.com/post/laravel-52-user-acl-roles-and-permissions-with-middleware-using-entrust-from-scratch-tutorialexample.html">tutorial</a> to set up the base of the project.
 
 <ul>
-  <li><a href="#step1">Step 1: SETUP AND DEPENDENCIES </a></li>
+  <li><a href="#step1">Step 1: Setup and Dependecies </a></li>
   <li><a href="#step2">Step 2: Create Tables Using Migration</a></li>
-  <li><a href="#step3">Step 3: Prepare Database</a></li>
-  <li><a href="#step4">Step 4: Authenticating Users</a></li>
 </ul>
+
 
 <a name="step1"></a>
 <h1>Step 1: Setup and Dependencies</h1>
@@ -97,8 +97,8 @@ protected $routeMiddleware = [
     <li>roles</li>
     <li>role_user</li>
     <li>permission_role</li>
-    <li><b>clients<b></li>
-    <li><b>client_statuses<b></li>
+    <li><b>clients</b></li>
+    <li><b>client_statuses</b></li>
 </ol>
 
 If you install a fresh laravel project then you have already users table migration.

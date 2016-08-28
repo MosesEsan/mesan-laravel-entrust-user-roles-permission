@@ -27,13 +27,13 @@
 					<div class="control-group">
 						<label class="control-label" for="name">Name</label>
 						<div class="controls">
-							<input type="text" class="input-xlarge" id="name" name="name"/>
+							<input type="text" class="input-xlarge" id="name" name="name" value="{{ old('name') }}"/>
 						</div>
 					</div>
 					<div class="control-group">
 						<label class="control-label" for="email">E-mail</label>
 						<div class="controls">
-							<input type="text" class="input-xlarge" id="email"  name="email"/>
+							<input type="text" class="input-xlarge" id="email"  name="email" value="{{ old('email') }}"/>
 						</div>
 					</div>
 					<div class="control-group">
