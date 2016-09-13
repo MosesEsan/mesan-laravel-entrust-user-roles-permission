@@ -188,8 +188,10 @@ class CreateClientStatusTable extends Migration
     }
 }
 
+Run
+```bash
+php artisan entrust:migration
 ```
-
 
 <strong>IMPORTANT (In case of error when running the entrust migration)</strong>
 In vendor/zizaco/entrust/src/commands/MigrationCommand.php on line 86
@@ -221,12 +223,6 @@ Update the provider object in config/auth.php to look like this
 ],
 
 ```
-
-Run
-```bash
-php artisan entrust:migration
-```
-
 
 <strong>permissions, roles, role_user, permission_role</strong>
 ```php
@@ -302,5 +298,45 @@ class EntrustSetupTables extends Migration
     }
 }
 ```
+
+```
+If you are using MAMP be sure to add the unix_socket key with a value of the path that the mysql.sock resides in MAMP.
+<strong>config/database.php</strong>
+
+```php
+'mysql' => [
+    'driver' => 'mysql',
+    'host' => env('DB_HOST', 'localhost'),
+    'port' => env('DB_PORT', '3306'),
+    'database' => env('DB_DATABASE', 'jwt-api-db'),
+    'username' => env('DB_USERNAME', 'jwt-api'),
+    'password' => env('DB_PASSWORD', 'testpwd'),
+    'charset' => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix' => '',
+    'strict' => false,
+    'engine' => null,
+    'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+],
+```
+
+Update .env file with your database settings(db_database, db_username, db_password) and update the CACHE_DRIVER value to array
+
+```php
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=[db_name]
+DB_USERNAME=[db_user]
+DB_PASSWORD=[db_pwd]
+
+CACHE_DRIVER=array
+```
+
+Run
+```bash
+php artisan migrate
+```
+
 
 <strong>More to come....</strong>

@@ -24,7 +24,7 @@ class CreateClientsTable extends Migration
             $table->timestamps();
 
             $table->foreign('added_by')->references('id')->on('users');
-            $table->foreign('status')->references('id')->on('client_status');
+            $table->foreign('status')->references('id')->on('client_statuses');
         });
     }
 

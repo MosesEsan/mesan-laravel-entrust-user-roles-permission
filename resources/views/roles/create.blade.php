@@ -33,7 +33,7 @@
                     <div class="control-group">
                         <label class="control-label" for="role">Role Name</label>
                         <div class="controls">
-                            <input type="text" class="input-xlarge" id="role" name="name" value="{{ old('email') }}"/>
+                            <input type="text" class="input-xlarge" id="role" name="name" value="{{ old('name') }}"/>
                         </div>
                     </div>
                     <div class="control-group">

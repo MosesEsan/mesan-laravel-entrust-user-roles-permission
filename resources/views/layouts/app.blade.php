@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Admin | Strass</title>
+    <title>Admin | Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Admin panel developed with the Bootstrap from Twitter.">
     <meta name="author" content="travis">
@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Moses Esan User Management</a>
+            <a class="brand" href="#">User Management</a>
             <div class="btn-group pull-right">
                 <a class="btn" href="my-profile.html"><i class="icon-user"></i> {{ Auth::user()->name }}</a>
                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
