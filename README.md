@@ -1,12 +1,12 @@
-# Laravel 5.3 Role Based Authentication using Entrust Package
-A User and Roles Management PHP project using the Laravel framework and Entrust package to create a role based authentication API.
+# Laravel 5.3 Administration Module using Entrust Package to add Role-based Permissions
+A PHP Administration Module which allows for <b>Roles</b> and <b>Users</b> Management, developed using the Laravel 5.3 framework and Entrust package in order to add role-based permissions.
 
 <h2>Admin Users can:</h2>
 <ol>
-<li>Create New Roles</li>
-<li>Set Permissions for each role</li>
-<li>Create New Users</li>
-<li>Set each users role</li>
+<li>Create new roles</li>
+<li>Set permissions for each role</li>
+<li>Create new users</li>
+<li>Assign a role to the user</li>
 </ol>
 
 <h2>API Structure</h2>
