@@ -1,5 +1,5 @@
 # Laravel 5.3 Administration Module using Entrust Package to add Role-based Permissions
-A PHP Administration Module which allows for <b>Roles</b> and <b>Users</b> Management, developed using the Laravel 5.3 framework and Entrust package in order to add role-based permissions.
+A PHP Administration Module which includes <b>Roles</b> and <b>Users</b> Management, developed using the Laravel 5.3 framework and Entrust package in order to add role-based permissions.
 
 <h2>Admin Users can:</h2>
 <ol>
