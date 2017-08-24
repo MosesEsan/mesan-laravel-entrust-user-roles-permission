@@ -9,11 +9,13 @@ A PHP Administration Module with an ACL(Access Control List) based on Roles and 
 <li><a href="#step1">Step 1: Create new project and install Entrust</a></li>
 <li><a href="#step2">Step 2: Add Entrust Provider and Facades</a></li>
 <li><a href="#step3">Step 3: Set Up Database</a></li>
-<li><a href="#step4">Step 4:  Set Up Database</a></li>
-<li><a href="#step5">Step 5: Register and Verify Email Address</a></li>
-<li><a href="#step6">Step 6: Log User In and Out</a></li>
-<li><a href="#step6">Step 7: Recover Password</a></li>
-<li><a href="#step7">Step 8: Testing</a></li>
+<li><a href="#step4">Step 4: Create Models</a></li>
+<li><a href="#step5">Step 5: Create Our Database Seeder</a></li>
+<li><a href="#step6">Step 6: Create Our Authentication</a></li>
+<li><a href="#step7">Step 7: Create Our Controllers and Routes</a></li>
+<li><a href="#step8">Step 8: Create Our Views</a></li>
+<li><a href="#step9">Step 9: Update Our Navigation Menu and Add Error Page</a></li>
+<li><a href="#step10">Step 10: Testing</a></li>
 </ul>
 
 <a name="step1"></a>
