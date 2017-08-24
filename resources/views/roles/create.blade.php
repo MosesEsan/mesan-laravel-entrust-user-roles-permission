@@ -2,67 +2,112 @@
 /**
  * Created by PhpStorm.
  * User: mosesesan
- * Date: 8/24/16
- * Time: 12:56 PM
+ * Date: 23/08/2017
+ * Time: 20:42
  */
 ?>
 @extends('layouts.app')
 
 @section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Create New Role</div>
 
-    <div class="span9">
-        <div class="row-fluid">
-            <div class="page-header">
-                <h1>New Role <small>Add a new role</small></h1>
-            </div>
+                    <div class="panel-body">
+                        <!-- Display Validation Errors -->
+                        @if (count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('admin/roles') }}">
+                            {{ csrf_field() }}
+
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label for="name" class="col-md-4 control-label">Name</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"
+                                           required autofocus>
+
+                                    @if ($errors->has('name'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('display_name') ? ' has-error' : '' }}">
+                                <label for="display_name" class="col-md-4 control-label">Display Name:</label>
+
+                                <div class="col-md-6">
+                                    <input id="name" type="text" class="form-control" name="display_name" value="{{ old('display_name') }}"
+                                           required autofocus>
+
+                                    @if ($errors->has('display_name'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('display_name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="form-group{{ $errors->has('description') ? ' has-error' : '' }}">
+                                <label for="email" class="col-md-4 control-label">Description</label>
+
+                                <div class="col-md-6">
+                                    <textarea rows="4" cols="50" name="description" id="description" class="form-control">{{ old('description') }}</textarea>
+
+                                    @if ($errors->has('description'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group{{ $errors->has('permissions') ? ' has-error' : '' }}">
+                                <label for="permissions" class="col-md-4 control-label">Permissions</label>
+
+                                <div class="col-md-6">
+                                    @foreach ($permissions as $key => $permission)
+                                        <input type="checkbox"  value="{{$key}}" name="permissions[]"> {{$permission}}<br>
+                                    @endforeach
+
+                                    @if ($errors->has('permissions'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('permissions') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-8 col-md-offset-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Save
+                                    </button>
+
+                                    <a class="btn btn-link" href="{{ url('admin/roles') }}">
+                                        Cancel
+                                    </a>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
-            @endif
-
-            <form action="{{ url('roles') }}" method="POST" class="form-horizontal">
-                {{ csrf_field() }}
-                <fieldset>
-                    <div class="control-group">
-                        <label class="control-label" for="role">Role Name</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="role" name="name" value="{{ old('name') }}"/>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="role">Display Name</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" id="role" name="display_name" value="{{ old('display_name') }}"/>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="description">Description</label>
-                        <div class="controls">
-                            <textarea class="input-xlarge" id="description" rows="3" name="description" >{{ old('description') }}</textarea>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label" for="role">Role</label>
-                        <div class="controls">
-                            @foreach ($permission as $key => $value)
-                                <input type="checkbox"  value="{{$key}}" name="permission[]"> {{$value}}<br>
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="form-actions">
-                        <input type="submit" class="btn btn-success btn-large" value="Save Role" />
-                        <a class="btn"  href="{{ url('/roles') }}">Cancel</a>
-                    </div>
-                </fieldset>
-            </form>
+            </div>
         </div>
     </div>
 @endsection
+

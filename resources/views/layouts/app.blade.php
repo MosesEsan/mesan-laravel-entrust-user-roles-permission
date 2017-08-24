@@ -1,116 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
-    <title>Admin | Test</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Admin panel developed with the Bootstrap from Twitter.">
-    <meta name="author" content="travis">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="{{ URL::asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/site.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/bootstrap-responsive.css') }}" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+<div id="app">
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#">User Management</a>
-            <div class="btn-group pull-right">
-                <a class="btn" href="my-profile.html"><i class="icon-user"></i> {{ Auth::user()->name }}</a>
-                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                    <span class="caret"></span>
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
                 </a>
-                <ul class="dropdown-menu">
-                    <li><a href="{{ url('/profile') }}">Profile</a></li>
-                    <li class="divider"></li>
-                    <li><a href="{{ url('/logout') }}">Logout</a></li>
-                </ul>
             </div>
-            <div class="nav-collapse">
-                <ul class="nav">
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    @role(('admin'))
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ route('users.create') }}">New User</a></li>
-                            <li class="divider"></li>
-                            <li><a href="{{ url('/users') }}">Manage Users</a></li>
-                        </ul>
-                    </li>
-                    @endrole
-                    @permission(('role-list'))
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Roles <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ route('roles.create') }}">New Role</a></li>
-                            <li class="divider"></li>
-                            <li><a  href="{{ url('/roles') }}">Manage Roles</a></li>
-                        </ul>
-                    </li>
-                    @endpermission
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Clients<b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ route('clients.create') }}">New Client</a></li>
-                            <li class="divider"></li>
-                            <li><a  href="{{ url('/clients') }}">Manage Clients</a></li>
-                        </ul>
-                    </li>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav">
+                    &nbsp;
                 </ul>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="container">
-    <div class="row-fluid">
-        <div class="span3">
-            <div class="well sidebar-nav">
-                <ul class="nav nav-list">
-                    <li class="nav-header"><i class="icon-wrench"></i> Administration</li>
-                    @role(('admin'))
-                    <li><a href="{{ url('/users') }}">Users</a></li>
-                    @endrole
-                    @permission(('role-list'))
-                    <li><a href="{{ url('/roles') }}">Roles</a></li>
-                    @endpermission
-                    <li><a href="{{ url('/clients') }}">Clients</a></li>
-                    {{--<li><a href="{{ url('/candidates') }}">Candidates</a></li>--}}
-                    <li class="nav-header"><i class="icon-user"></i> Profile</li>
-                    <li><a href="{{ url('/profile') }}">My profile</a></li>
-                    <li><a href="{{ url('/logout') }}">Logout</a></li>
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
+                    @else
 
+                    <!-- ADD ROLES AND USERS LINKS -->
+                        @role('admin')
+                        <li><a href="{{ route('roles.index') }}">Roles</a></li>
+                        <li><a href="{{ route('users.index') }}">Users</a></li>
+                        @endrole
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
+    </nav>
 
-        {{--class="active"--}}
-
-        @yield('content')
-
-
-    </div>
-
-    <hr>
-
-    <footer class="well">
-        {{--&copy; --}}
-    </footer>
-
+    @yield('content')
 </div>
-
-
-
 
 <!-- Scripts -->
-<script src="{{ URL::asset('js/jquery.js') }}"></script>
-<script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
