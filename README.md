@@ -1,6 +1,6 @@
 # Laravel 5.4 Administration Module with Role-based permissions using Entrust package
 
-A PHP Administration Module with an ACL(Access Control List) based on Roles and Permissions, developed using the Laravel 5.5 framework and Entrust package.
+A PHP Administration Module with an ACL(Access Control List) based on Roles and Permissions, developed using the Laravel 5.4 framework and Entrust package.
 
 
 ### Tutorial
