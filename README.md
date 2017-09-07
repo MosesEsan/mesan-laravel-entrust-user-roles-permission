@@ -2,8 +2,88 @@
 
 A PHP Administration Module with an ACL(Access Control List) based on Roles and Permissions, developed using the Laravel 5.4 framework and Entrust package.
 
+## Testing
+In your browser, navigate to
 
-### Tutorial
+http://mosesesan.com/demos/entrust-admin-module/
+
+You should be presented with Laravel welcome page, click login at the top right then login in using the admin credentials below.
+
+```bash
+email: adminuser@test.com
+password: adminpwd
+```
+After logging in, you will be redirected to the home page, at the top right, click the roles link to go to the roles page.
+
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/roles.png" alt="Roles" height="500" width="300" align="left" style="border:1px solid green;">
+
+<br/>
+<br/>
+Click the “New Role” button to add a new role and assign the relevant permissions.
+<br/>
+<br/>
+
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/new_role.png" alt="New role" height="500" width="300" align="left" style="border:1px solid green;">
+<br/>
+<br/>
+After adding the new role, click the “Show” button to view the role information
+<br/>
+<br/>
+
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/role_info.png" alt="Role Info" height="500" width="300" align="left" style="border:1px solid green;">
+
+<br/>
+<br/>
+
+Create a new role and test the edit and delete operations.
+
+Now, lets add a new user and assign a role to them. Click the users link to go to the users page.
+
+Click the “New User” button to add a new user and assign them the Senior Consultant role. Make sure you remember the password you set for the new user.
+
+<br/>
+<br/>
+
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/new_user.png" alt="New User" height="500" width="300" align="left" style="border:1px solid green;">
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/users.png" alt="New User" height="500" width="300" align="left" style="border:1px solid green;">
+
+<br/>
+<br/>
+
+After successfully creating the new user, test the “Show” and “Edit” operations.
+
+Create a new user and test delete operation.
+
+For the final test, log out and log back in using the credentials of our newly created user.
+
+Once you log in, you should notice that the Roles and Users link is missing in the navigation bar on the top right of the page, this is because the user is not an Admin user
+
+<br/>
+<br/>
+
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/welcome.png" alt="Logged In" height="500" width="300" align="left" style="border:1px solid green;">
+
+<br/>
+<br/>
+
+If you attempt to access to the roles or users page using the url:
+
+http://mosesesan.com/demos/entrust-admin-module/admin/roles
+
+http://mosesesan.com/demos/entrust-admin-module/admin/users
+
+You should be presented with our 403 page
+
+<br/>
+<br/>
+
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/403.png" alt="Permission Error" height="500" width="300" align="left" style="border:1px solid green;">
+
+<br/>
+<br/>
+
+
+## Tutorial
 
 <ul>
 <li><a href="#step1">Step 1: Create new project and install Entrust</a></li>
