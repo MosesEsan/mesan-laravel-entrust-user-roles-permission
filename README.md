@@ -15,7 +15,7 @@ password: adminpwd
 ```
 After logging in, you will be redirected to the home page, at the top right, click the roles link to go to the roles page.
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/roles.png" alt="Roles" height="500" width="300" align="left" style="border:1px solid green;">
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/roles.png" alt="Roles" >
 
 <br/>
 <br/>
@@ -23,14 +23,14 @@ Click the “New Role” button to add a new role and assign the relevant permis
 <br/>
 <br/>
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/new_role.png" alt="New role" height="500" width="300" align="left" style="border:1px solid green;">
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/new_role.png" alt="New role" width="300" align="left" >
 <br/>
 <br/>
 After adding the new role, click the “Show” button to view the role information
 <br/>
 <br/>
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/role_info.png" alt="Role Info" height="500" width="300" align="left" style="border:1px solid green;">
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/role_info.png" alt="Role Info" >
 
 <br/>
 <br/>
@@ -44,8 +44,8 @@ Click the “New User” button to add a new user and assign them the Senior Con
 <br/>
 <br/>
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/new_user.png" alt="New User" height="500" width="300" align="left" style="border:1px solid green;">
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/users.png" alt="New User" height="500" width="300" align="left" style="border:1px solid green;">
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/new_user.png" alt="New User" >
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/users.png" alt="Users Management" >
 
 <br/>
 <br/>
@@ -61,7 +61,7 @@ Once you log in, you should notice that the Roles and Users link is missing in t
 <br/>
 <br/>
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/welcome.png" alt="Logged In" height="500" width="300" align="left" style="border:1px solid green;">
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/welcome.png" alt="Logged In" >
 
 <br/>
 <br/>
@@ -77,7 +77,7 @@ You should be presented with our 403 page
 <br/>
 <br/>
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/403.png" alt="Permission Error" height="500" width="300" align="left" style="border:1px solid green;">
+<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/403.png" alt="Permission Error" >
 
 <br/>
 <br/>
