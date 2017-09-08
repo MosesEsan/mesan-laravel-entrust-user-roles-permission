@@ -15,25 +15,15 @@ password: adminpwd
 ```
 After logging in, you will be redirected to the home page, at the top right, click the roles link to go to the roles page.
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/roles.png" alt="Roles" >
+![Roles Management](http://mosesesan.com/demos/entrust-admin-module/screenshots/roles.png)
 
-<br/>
-<br/>
 Click the “New Role” button to add a new role and assign the relevant permissions.
-<br/>
-<br/>
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/new_role.png" alt="New role" width="300" align="left" >
-<br/>
-<br/>
+![New Role](http://mosesesan.com/demos/entrust-admin-module/screenshots/new_role.png)
+
 After adding the new role, click the “Show” button to view the role information
-<br/>
-<br/>
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/role_info.png" alt="Role Info" >
-
-<br/>
-<br/>
+![Role Info](http://mosesesan.com/demos/entrust-admin-module/screenshots/role_info.png)
 
 Create a new role and test the edit and delete operations.
 
@@ -41,14 +31,9 @@ Now, lets add a new user and assign a role to them. Click the users link to go t
 
 Click the “New User” button to add a new user and assign them the Senior Consultant role. Make sure you remember the password you set for the new user.
 
-<br/>
-<br/>
+![New User](http://mosesesan.com/demos/entrust-admin-module/screenshots/new_user.png)
+![Users Management](http://mosesesan.com/demos/entrust-admin-module/screenshots/users.png)
 
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/new_user.png" alt="New User" >
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/users.png" alt="Users Management" >
-
-<br/>
-<br/>
 
 After successfully creating the new user, test the “Show” and “Edit” operations.
 
@@ -58,10 +43,7 @@ For the final test, log out and log back in using the credentials of our newly c
 
 Once you log in, you should notice that the Roles and Users link is missing in the navigation bar on the top right of the page, this is because the user is not an Admin user
 
-<br/>
-<br/>
-
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/welcome.png" alt="Logged In" >
+![Logged In](http://mosesesan.com/demos/entrust-admin-module/screenshots/welcome.png)
 
 <br/>
 <br/>
@@ -74,14 +56,7 @@ http://mosesesan.com/demos/entrust-admin-module/admin/users
 
 You should be presented with our 403 page
 
-<br/>
-<br/>
-
-<img src="https://github.com/MosesEsan/mesan-laravel-entrust-user-roles-permission/tree/laravel5.4/screenshots/403.png" alt="Permission Error" >
-
-<br/>
-<br/>
-
+![Permission Error](http://mosesesan.com/demos/entrust-admin-module/screenshots/403.png)
 
 ## Tutorial
 
